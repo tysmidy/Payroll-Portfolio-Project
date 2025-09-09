@@ -1,0 +1,7 @@
+{
+    "files": [],
+    "references": [
+        //backend e.g. everything under.backend
+        {"path": "./tsconfig.backend.json"}
+    ]
+}

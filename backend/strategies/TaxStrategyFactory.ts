@@ -1,4 +1,4 @@
-import  "./models/fedrate1.json";
+import  "../../models/fedrate1.json";
 import { TaxStrategy } from "./TaxStrategy";
 
 function getBracket(grossPay: number): string{
@@ -13,8 +13,9 @@ function getBracket(grossPay: number): string{
 	}
 
   //got rid of a bunch of the map, all in json
-  const fedRateMap = require("./models/fedrate1.json");;
-
+  const fedRateMap = require("../../models/fedrate1.json");
+  console.log(fedRateMap.json)
+  console.log("if nothing outputs here then we need to add error messeges before moving forward.")
   //think we'll have to revise this very much
 export class TaxStrategyFactory {
   static getStrategy(
@@ -27,7 +28,7 @@ export class TaxStrategyFactory {
     //example before it's built out
     const key = `${bracket}_${maritalStatus}_${payType}`;
     const rate = fedRateMap[key]
-    console.log(rate);
+    console.log("testing to see if we get here");
     return rate !== undefined ? new TaxStrategy(rate) : null;
   }
 }
