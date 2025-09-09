@@ -1,3 +1,4 @@
+import  "./models/fedrate1.json";
 import { TaxStrategy } from "./TaxStrategy";
 
 function getBracket(grossPay: number): string{
@@ -10,24 +11,23 @@ function getBracket(grossPay: number): string{
 		else 
 			return "fedRate5" //50%
 	}
-//map all combos to a tax rate
-const fedRateMap = {
-		"fedRate1": .10,
-		"fedRate2": .20,
-        "fedRate5": .50
-		//etc etc
-        //not real rates, finish building out
-};
 
+  //got rid of a bunch of the map, all in json
+  const fedRateMap = require("./models/fedrate1.json");;
+
+  //think we'll have to revise this very much
 export class TaxStrategyFactory {
   static getStrategy(
-    grossPay: number,
-    maritalStatus: string,
-    payType: string
+    //examples for import - will most likelyu have to map it like taxes, 
+    grossPay: number = 2200,
+    maritalStatus: string = "Married",
+    payType: string = "Salary"
   ): TaxStrategy | null {
     const bracket = getBracket(grossPay);
+    //example before it's built out
     const key = `${bracket}_${maritalStatus}_${payType}`;
-    const rate = fedRateMap[key];
+    const rate = fedRateMap[key]
+    console.log(rate);
     return rate !== undefined ? new TaxStrategy(rate) : null;
   }
 }
