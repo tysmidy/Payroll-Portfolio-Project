@@ -1,0 +1,1 @@
+9/6/25 - got design/arch in place. Make logic for program. Tomorrow will input what I have and build it out further. MAKE SURE TO MAKE A TICKET FOR THIS
