@@ -1,0 +1,20 @@
+<template>
+    <head>
+        <meta charset="UTF-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    	<title>Pay-project</title>
+  	</head>
+
+  	<body>
+        <div class="some-thing"></div>
+            <h1>THis is just something to display and make sure my syntax is right on Vue</h1>
+  	</body>
+</template>
+
+<style lang="css">
+#some-thing{
+    height: 10px;
+    font-size: medium;
+    font-weight: 800;
+}
+</style>

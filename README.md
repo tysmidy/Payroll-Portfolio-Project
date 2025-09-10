@@ -12,3 +12,8 @@ Next steps:
     -Was having issues with everthing running, had to get all my ts configs and packages good.
     -Now because of root - package.json, TS will actually complile and run
     Next steps : think I need to get an interface up so you can actually pass data in. From there I can test on basic logic and start building some stuff out.
+
+9/9/25
+ to run application - npm run dev
+ -Had to fix further issues with packages installed so I could test a front end. 
+ -Going to get interface built out some so I can try and mess with the data base/touch some of the logic (determine what someones tax rate should be, think I need to get the logic to prompt this, as the logic is there, but no trigger to actually touch that code.)
