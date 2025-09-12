@@ -1,12 +1,13 @@
 import express from "express";
+import cors from "cors";
 import payrollRoutes from "./routes/payrollRoutes";
 
 const app = express();
-const PORT = 3000;
-
+app.use(cors());
 app.use(express.json());
-app.use("/app/payroll", payrollRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// ✅ This must match what your frontend calls
+app.use("/api/payroll", payrollRoutes);
+
+const PORT = 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

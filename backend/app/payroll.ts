@@ -2,16 +2,20 @@
 import { getEmployeeData } from "../db/employee";
 import { TaxStrategyFactory } from "../strategies/TaxStrategyFactory";
 
-export async function calculatePayroll(employeeId: string, grossPay: number) {
+export async function calculatePayroll(employeeId: string) {
   // Fetch data from DB
-  const { maritalStatus, payType } = await getEmployeeData(employeeId);
+  console.log("1")
+  const { maritalStatus, payType, grossPay } = await getEmployeeData(employeeId);
+  console.log("2")
 
-  // Pick strategy
-  const strategy = TaxStrategyFactory.getStrategy(grossPay, maritalStatus, payType);
+  //changing this since we got rid of the bracket logic
+  const strategy = TaxStrategyFactory.create(maritalStatus, payType);
+console.log("3")
 
   if (!strategy) throw new Error("No matching tax strategy found.");
-
+console.log("4")
   // Calculate tax
   const tax = strategy.calculate(grossPay);
+  console.log("5")
   return { grossPay, maritalStatus, payType, tax };
 }

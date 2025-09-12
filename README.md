@@ -16,4 +16,17 @@ Next steps:
 9/9/25
  to run application - npm run dev
  -Had to fix further issues with packages installed so I could test a front end. 
- -Going to get interface built out some so I can try and mess with the data base/touch some of the logic (determine what someones tax rate should be, think I need to get the logic to prompt this, as the logic is there, but no trigger to actually touch that code.)
+ -Going to get interface built out some so I can try and mess with the data base/touch some of the logic (determine what someones tax rate should be, think I need to get the logic to prompt this, as the logic is there, but no trigger to actually touch that code.) Can also add console logic if I just want to test...
+
+ 9/10 
+- Built out basic interface for testing
+- installed more dependencies
+- may have a problem with actually connecting to DB (look at past notes to fix)
+- fixed fedrate data model
+
+9/11
+- got DB connected (WSL was not registering it, had to create rule in windows defender)
+- messed around with debugging but realized that i'm trying to hardcode things i'm going to change later..
+- goint to start working on entering in rates/hours to get gross, move on from there to crazy logic
+
+- note, look for inspo for interfaces

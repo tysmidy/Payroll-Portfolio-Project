@@ -1,10 +1,61 @@
-<head>
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
         <meta charset="UTF-8" />
     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     	<title>Pay-project</title>
+        <link rel="stylesheet" href="style.css">
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>'
   	</head>
 
   	<body>
-        <div class="some-thing"></div>
-            <h1>THis is just something to display and make sure my syntax is right on Vue</h1>
+        <header class="header">
+            <div class="top-header">
+                <h1>Payroll Program</h1>
+            </div>
+            <div class="top-line">
+                <p>This is my first <span>Portfolio project</span></p>
+            </div>  
+        </header>
+        <h2>TEST DATA</h2>
+        <!--INPUTS TEST-->
+<input type="number" id="grossPay" placeholder="Enter Employee gross ">
+<button id="grossButton">enter gross</button>
+<pre id="result1"></pre>
+
+        <input type="text" id="employeeId" placeholder="Enter Employee ID">
+<button id="calc-button">Calculate Tax</button>
+<pre id="result"></pre>
+
   	</body>
+
+<script>
+let grossPay = 0; 
+
+grossButton.addEventListener('click', function() {
+    grossPay = parseFloat(document.getElementById('grossPay').value);
+    document.getElementById('result1').textContent = "Gross Pay: " + grossPay;
+});
+  document.getElementById("calc-button").addEventListener("click", async () => {
+  const employeeId = document.getElementById("employeeId").value.trim();
+
+  if (!employeeId) {
+    document.getElementById("result").textContent = "Please enter an Employee ID";
+    return;
+  }
+
+  try {
+    const res = await fetch(`http://localhost:3000/api/payroll/${employeeId}/${grossPay}`);
+    if (!res.ok) throw new Error(`Server error: ${res.status} ${res.statusText}`);
+
+    const data = await res.json();
+    document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+  } catch (err) {
+    document.getElementById("result").textContent = "Error: " + err.message;
+  }
+});
+</script>
+
+
+
+    </html>
