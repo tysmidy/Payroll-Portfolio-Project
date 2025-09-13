@@ -9,20 +9,61 @@
   	</head>
 
   	<body>
+      <div id = top-div>=
         <header class="header">
             <div class="top-header">
-                <h1>Payroll Program</h1>
+                <h1>Payroll Processing</h1>
             </div>
             <div class="top-line">
-                <p>This is my first <span>Portfolio project</span></p>
+                <p>Processing Payroll is a modern day issue that may business’s face 
+                  and that may of us take for granted. 
+                  If company's don’t process payroll, 
+                  then we as employee’s don’t get paid. 
+                  I built this for employees to confirm that 
+                  your paychecks are always correct.</p>
             </div>  
         </header>
-        <h2>TEST DATA</h2>
-        <!--INPUTS TEST-->
-<input type="number" id="grossPay" placeholder="Enter Employee gross ">
-<button id="grossButton">enter gross</button>
+      </div>
+        <h2>payroll week</h2>
+        <!--input week, enter hour data, grab rates from db, etc, display below entries-->
+        
+        <form action="`http://localhost:3000"></form>
+<input type="date" id="payDate" placeholder="Enter work week"
+ min="2025-01-01" max="2025-12-31" required>
+<p><button id="pay-date">Enter work week</button></p>
 <pre id="result1"></pre>
+</form>
 
+<div class="week-day">
+  <label for="mon">Monday</label>
+    <input type="number" placeholder="hours" 
+    name="hours1" id="hours1-1"/>
+
+  <label for="tue">Tuesday</label>
+    <input type="number" placeholder="hours" 
+    name="hours12" id="hours1-2"/>
+
+  <label for="wens">Wednesday</label>
+    <input type="number" placeholder="hours" 
+    name="hours3" id="hours1-3"/>
+
+  <label for="thur">Thursday</label>
+    <input type="number" placeholder="hours" 
+    name="hours4" id="hours1-4"/>
+
+  <label for="fri">Friday</label>
+    <input type="number" placeholder="hours" 
+    name="hours5" id="hours1-5"/>
+
+  <label for="sat">Saturday</label>
+    <input type="number" placeholder="hours" 
+    name="hours6" id="hours1-6"/>
+
+  <label for="sun">Sunday</label>
+      <input type="number" placeholder="hours" 
+    name="hours7" id="hours1-7"/>
+
+</div>
         <input type="text" id="employeeId" placeholder="Enter Employee ID">
 <button id="calc-button">Calculate Tax</button>
 <pre id="result"></pre>

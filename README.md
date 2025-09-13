@@ -30,3 +30,6 @@ Next steps:
 - goint to start working on entering in rates/hours to get gross, move on from there to crazy logic
 
 - note, look for inspo for interfaces
+
+9/12
+- light day, worked on refactoring my HTML based off of one time card, if I want muti later I'll have to refactor it
