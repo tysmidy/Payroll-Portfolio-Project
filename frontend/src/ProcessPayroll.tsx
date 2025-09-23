@@ -7,14 +7,14 @@ import { error } from "console";
 type PayrollResponse = {
     employeeId: string;
     grossPay: number;
-    status1: string;
+    status: string;
 };
 //creating my function that my backend can use
 export default function ProcessPayroll()  {
     const [result, setResult] = useState<PayrollResponse | null>(null);
     
     //make a try catch for troubleshooing
-    const submitPayroll = async (data: {employeeId: string, hours: number, rate: number }) => {
+    const submitPayroll = async (data: {employeeId: string, hours: number}) => {
 
         try {
             const response = await fetch("/api/confR/grossPayData", {
@@ -23,6 +23,8 @@ export default function ProcessPayroll()  {
                 body: JSON.stringify(data), //pass in the above fields
         });
         if (!response.ok){
+            const err = await response.json();
+            console.log(err)
             throw new Error('Server error: ${response.status}');
         }
 
@@ -47,7 +49,7 @@ export default function ProcessPayroll()  {
                 <div>
                     <p>Employee ID: {result.employeeId}</p>
                     <p>Gross Pay: ${result.grossPay}</p>
-                    <p>Status: {result.status1}</p>
+                    <p>Status: {result.status}</p>
                 </div>
             )}
         </div>
