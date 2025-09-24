@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import { idText } from "typescript";
 import React from 'react';
 import { stringify } from "querystring";
-const EmployeeSchema = new mongoose.Schema({
+ const EmployeeSchema = new mongoose.Schema({
     name: {type: String, required: true},
     position: {type: String, required: true},
     social: {type: String, required: false},

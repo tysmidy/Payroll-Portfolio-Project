@@ -1,9 +1,8 @@
 import express from 'express';
-
-
 import { getEmployees, getEmployeesByIdAndRate } from '../db/employees'
 import { createEmployee } from '../db/employees'
-import { grossData } from '../helpers/index'
+//import { grossData } from '../helpers/index'
+import { getTaxdata } from '../db/tax';
 
 //this will actually be the funtion to grab pay data to process the gross roll
 export const grossPayData = async (req: express.Request, res: express.Response) => {
@@ -35,6 +34,33 @@ export const grossPayData = async (req: express.Request, res: express.Response) 
         return res.sendStatus(400);
     }
 }
+
+
+
+//we'll go ahead and build our tax info here. Not sure on how I wanna build out the rates
+export const fedTaxData = async (req: express.Request, res: express.Response) => {
+try {
+    const { marrigeStatus, payType, hours, rate } = req.body
+    if (!marrigeStatus || !payType || !hours || !rate){
+        console.log("Could not fetch that requested data. Tax error 1");
+        return res.sendStatus(400)};
+    
+
+    const fedTaxes = await getTaxdata(marrigeStatus, payType, hours, rate) 
+    
+    if (!fedTaxes){
+        console.log("could not fetch tax data from the system. Tax error 2");
+        return res.sendStatus(400)};
+
+        //tomorrow, figure out how to add in the rate tables and grab the needed logic
+
+} catch (error) {
+    
+}
+
+}
+
+
 
 
 
