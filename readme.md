@@ -41,3 +41,7 @@ Next step: refactor the code to include read logic. After I confirm this works I
 
 9/23
 fix CRUD logic on gross pay
+
+9/23 - 9/27
+    Added logic for taxes and reactored to where both could be displayed in the front end
+    may need to go update a "Pay table" in the DB for future to go store gross calculation, and stuff for net 

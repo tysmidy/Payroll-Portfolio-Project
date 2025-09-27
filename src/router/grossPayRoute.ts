@@ -1,6 +1,23 @@
-import { Router } from "express";
+/* import { Router } from "express";
+import { grossPayData } from '../controllers/payrollConfrimation';
+
+export default function registerGrossPayRoutes(router: Router): void {
+  router.post("/confR/grossPay", grossPayData);
+}
+ */
+
+
+
+
+
+
+
+
+/* import { Router } from "express";
 //declare the ee model
 import { getEmployeesById }  from "../db/employees"; 
+import {fedTaxData} from "../controllers/payrollConfrimation"
+import { type } from "node:os";
 
 
 export default (router: Router) => {
@@ -31,4 +48,7 @@ export default (router: Router) => {
       return res.status(500).json({ error: "Server error" });
     }
   });
-};
+
+  
+  } */
+
