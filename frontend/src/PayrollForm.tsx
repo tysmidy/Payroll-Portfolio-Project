@@ -1,83 +1,73 @@
 import React, { useState } from "react";
 
-type PayrollFormProps = {
-  onSubmit: (formData: {
-    employeeId: string;
-    rate: number;
-    hours: number;
-    payType: string;
-    marrigeStatus: string;
-  }) => void;
-  loading: boolean;
+interface PayrollFormProps {
+  onSubmit: (
+    employeeId: string,
+    rate: number,
+    hours: number) => void;
 };
 
-const PayrollForm: React.FC<PayrollFormProps> = ({ onSubmit, loading }) => {
+const PayrollForm: React.FC<PayrollFormProps> = ({ onSubmit}) => {
   const [employeeId, setEmployeeId] = useState("");
   const [rate, setRate] = useState<number>(0);
   const [hours, setHours] = useState<number>(0);
-  const [payType, setPayType] = useState("hourly");
-  const [marrigeStatus, setMarrigeStatus] = useState("single");
+  
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit({ employeeId, rate, hours, payType, marrigeStatus });
+    onSubmit(employeeId, rate, hours);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <input
-        type="text"
-        placeholder="Employee ID"
-        value={employeeId}
-        onChange={(e) => setEmployeeId(e.target.value)}
-        className="w-full border p-2 rounded"
-        required
-      />
 
-      <input
-        type="number"
-        placeholder="Rate"
-        value={rate}
-        onChange={(e) => setRate(Number(e.target.value))}
-        className="w-full border p-2 rounded"
-        required
-      />
+    <div>
+      <div id="top-div"> 
+        <h1>Process Payroll</h1>
+        <br />
+          <div id="project-paragrah">
+            <p>Welcome to my <span>Payroll Project</span></p>
+          
+            <p>Processing Payroll is a modern day issue that may business’s face 
+              and that may of us take for granted. 
+              If company's don’t process payroll, 
+              then we as employee’s don’t get paid. 
+              I built this for employees to confirm that 
+              your paychecks are always correct</p>
+          </div>
+      </div>
+      <div id="submit-div">
+        <form onSubmit={handleSubmit} className="p-4 bg-gray-100 rounded shadow">
+          <label>
+            Employee ID:
 
-      <input
-        type="number"
-        placeholder="Hours"
-        value={hours}
-        onChange={(e) => setHours(Number(e.target.value))}
-        className="w-full border p-2 rounded"
-        required
-      />
 
-      <select
-        value={payType}
-        onChange={(e) => setPayType(e.target.value)}
-        className="w-full border p-2 rounded"
-      >
-        <option value="hourly">Hourly</option>
-        <option value="salary">Salary</option>
-      </select>
+            <input
+              type="text"
+              value={employeeId}
+              onChange={(e) => setEmployeeId(e.target.value)}/>
+          </label>
+      
+          <label> 
+            Hours Worked:
+            <input
+             type="number"
+              value={hours} onChange={(e) => setHours(Number(e.target.value))} />
 
-      <select
-        value={marrigeStatus}
-        onChange={(e) => setMarrigeStatus(e.target.value)}
-        className="w-full border p-2 rounded"
-      >
-        <option value="single">Single</option>
-        <option value="married">Married</option>
-      </select>
+          </label>
+      
+          <label>
+          Employee Rate:
+            <input
+              type="number"
+              value={rate}onChange={(e) => setRate(Number(e.target.value))} />
+            </label>
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 disabled:opacity-50"
-      >
-        {loading ? "Calculating..." : "Calculate Payroll"}
-      </button>
-    </form>
+
+
+          <button type="submit">Calculate Payroll</button>
+        </form>
+      </div>
+    </div>
   );
 };
 

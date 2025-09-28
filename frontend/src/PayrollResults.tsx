@@ -3,18 +3,20 @@ import React from "react";
 type PayrollResultsProps = {
   grossPay: number | null;
   taxes: number | null;
-  error: string | null;
+
 };
 
-const PayrollResults: React.FC<PayrollResultsProps> = ({ grossPay, taxes, error }) => {
-  if (error) return <p className="text-red-500 mt-4">{error}</p>;
+const PayrollResults: React.FC<PayrollResultsProps> = ({ grossPay, taxes}) => {
+  
 
   if (grossPay === null || taxes === null) return null;
 
   return (
-    <div className="mt-4 p-4 bg-gray-100 rounded">
+    <div className="mt-4 p-4 bg-gray-100 rounded shadow">
+      <h3 className="text-lg font-semibold mb-2">Payroll Summary</h3>
       <p><strong>Gross Pay:</strong> ${grossPay.toFixed(2)}</p>
       <p><strong>Federal Taxes:</strong> ${taxes.toFixed(2)}</p>
+      <p><strong>Net Pay:</strong> ${(grossPay - taxes).toFixed(2)}</p>
     </div>
   );
 };

@@ -31,17 +31,17 @@ export const payrollData = async (req: express.Request, res: express.Response) =
 
     //returing everything in 1 json
     return res.json({
-      employeeId,
-      name,
-      position,
-      social,
-      status,
-      payType,
-      marrigeStatus,
-      rate,
-      hours,
+      employeeId: employee.employeeId,
+      name: employee.name,
+      position: employee.position,
+      social: employee.social,
+      status: employee.status,
+      payType: employee.payType,
+      marrigeStatus: employee.marrigeStatus,
+      rate: employee.rate,
+      hours: employee.hours,
       grossPay,
-      taxRespose,
+      taxes: taxRespose,
       MsgStatus: "Gross pay and Taxes were calculated sucsessfully"
     })
 
