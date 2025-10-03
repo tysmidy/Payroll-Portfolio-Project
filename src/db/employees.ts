@@ -28,7 +28,7 @@ const EmployeeSchema = new mongoose.Schema<EmployeeDocument>({
   employeeId: { type: String, required: true },
   rate: { type: Number, required: true },
   status: { type: String, required: true },
-  hours: { type: Number, required: false }, // include since you had it in your DB screenshot
+  hours: { type: Number, required: false }, 
 });
 
 // Step 4: Correct model typing
@@ -55,9 +55,12 @@ export const getEmployeesByIdAndRate = (employeeId : string, rate: number) => Em
     rate
 });
 //get them by status
-export const getEmployeesByStatus = (status: string) => EmployeeModel.findOne({ 
-    'Active': status
-});
+export const getEmployeesByStatus = async (
+  status: "active"
+): Promise<EmployeeDocument | any> => {
+  return EmployeeModel.find({ status }).exec();
+};
+
 //find by db id
 export const getEmployeesByDbId = (id: string) => EmployeeModel.findById(id);
 

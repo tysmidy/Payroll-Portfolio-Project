@@ -45,3 +45,12 @@ fix CRUD logic on gross pay
 9/23 - 9/27
     Added logic for taxes and reactored to where both could be displayed in the front end
     may need to go update a "Pay table" in the DB for future to go store gross calculation, and stuff for net 
+
+9/27 - 10/3
+
+Started work on timecards, created layout of UI and made the first data model
+
+10/3
+
+Settled on a model, got that and crud logic built out for it.
+Next steps, get helper and then controller in place for timecards
