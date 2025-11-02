@@ -1,21 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styling/homeStyle.css"
 
 const HomePage: React.FC = () => {
   return (
-    <div className="text-center mt-10">
-      <h1 className="text-3xl font-bold mb-8">Company Payroll System</h1>
+    <div className="top-div">
+      <h1 className="PayrollDashboard">Company Payroll System</h1>
 
-      <div className="flex justify-center gap-6">
+      <div className="link-divs" >
         <Link
           to="/timecard"
-          className="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600"
+          className="timecard-home-button"
         >
           Go to Timecard
         </Link>
         <Link
           to="/payroll"
-          className="bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600"
+          className="payroll-button"
         >
           Process Payroll
         </Link>

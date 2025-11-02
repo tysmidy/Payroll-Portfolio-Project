@@ -3,17 +3,17 @@ import { Routes, Route, Link } from "react-router-dom";
 import HomePage from "./HomePage";
 import PayrollPage from "./payInterface";
 import TimecardPage from "./TimeInterface";
+import "../styling/navbar.css"
 
 const App: React.FC = () => {
   return (
-    <div className="p-6">
-      <nav className="flex gap-4 mb-4 border-b pb-2">
-        <Link to="/">-- Home page</Link>
-        <Link to="/timecard">-- Timecard</Link>
-        <Link to="/payroll"> --Payroll</Link>
+    <div className="navbar">
+      <nav className="nav-bar-2">
+        <Link to="/" className="home-button"> Home page </Link>
+        <Link to="/timecard" className="time-button"> Timecard </Link>
+        <Link to="/payroll" className="pay-button"> Payroll </Link>
       </nav>
-
-      <Routes>
+      <Routes >
         <Route path="/" element={<HomePage />} />
         <Route path="/timecard" element={<TimecardPage />} />
         <Route path="/payroll" element={<PayrollPage />} />
