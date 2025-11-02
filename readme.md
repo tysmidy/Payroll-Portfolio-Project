@@ -54,3 +54,10 @@ Started work on timecards, created layout of UI and made the first data model
 
 Settled on a model, got that and crud logic built out for it.
 Next steps, get helper and then controller in place for timecards
+
+11/2
+ Took a break since i was on vacation. Stopped working on it at around 10/15.
+ Added timecard controllers, interces, form, etc.
+ getting error in chrome that i'm trying to fix.
+ also created lil dashboard and getting buttons set up to navigate between dif interfaces.
+ 

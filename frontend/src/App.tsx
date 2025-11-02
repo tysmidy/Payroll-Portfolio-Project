@@ -1,35 +1,23 @@
-import React, { useState } from "react";
-import PayrollForm from "./PayrollForm";
-import PayrollResults from "./PayrollResults";
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import HomePage from "./HomePage";
+import PayrollPage from "./payInterface";
+import TimecardPage from "./TimeInterface";
 
 const App: React.FC = () => {
-  const [grossPay, setGrossPay] = useState<number | null>(null);
-  const [taxes, setFedTax] = useState<number | null>(null);
-
-  const handleFormSubmit = async (employeeId: string, hours: number, rate: number) => {
-    try {
-      const response = await fetch("http://localhost:5000/payroll/payData", {
-        method: "POST",   // must match backend
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ employeeId, hours, rate }),
-      });
-
-      if (!response.ok) throw new Error("Failed to fetch payroll data");
-
-      const data = await response.json();
-      setGrossPay(data.grossPay);
-      setFedTax(data.taxes);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
-    <div className="max-w-md mx-auto mt-10">
-      <PayrollForm onSubmit={handleFormSubmit} />
-      <PayrollResults grossPay={grossPay} taxes={taxes} />
+    <div className="p-6">
+      <nav className="flex gap-4 mb-4 border-b pb-2">
+        <Link to="/">-- Home page</Link>
+        <Link to="/timecard">-- Timecard</Link>
+        <Link to="/payroll"> --Payroll</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/timecard" element={<TimecardPage />} />
+        <Route path="/payroll" element={<PayrollPage />} />
+      </Routes> 
     </div>
   );
 };

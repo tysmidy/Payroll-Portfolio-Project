@@ -1,11 +1,13 @@
 import express from "express";
 import PayrollDataRouter from "./payDataWithTaxRouter"
+import TimecardDataRouter from "./timeRouter";
 
 //the router index
 export default function createRouter(): express.Router {
   const router = express.Router();
 
   PayrollDataRouter(router);
+  TimecardDataRouter(router);
 
   return router;
 }
