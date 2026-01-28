@@ -11,7 +11,7 @@ const App: React.FC = () => {
       <nav className="nav-bar-2">
         <Link to="/" className="home-button"> Home page </Link>
         <Link to="/timecard" className="time-button"> Timecard </Link>
-        <Link to="/payroll" className="pay-button"> Payroll </Link>
+        <Link to="/payroll" className="pay-button"> Payroll   </Link>
       </nav>
       <Routes >
         <Route path="/" element={<HomePage />} />

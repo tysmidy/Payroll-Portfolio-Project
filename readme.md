@@ -61,3 +61,11 @@ Next steps, get helper and then controller in place for timecards
  getting error in chrome that i'm trying to fix.
  also created lil dashboard and getting buttons set up to navigate between dif interfaces.
  
+ 11/3
+  Work on styling.
+
+11/4
+    use npm run all to run application now
+
+1/28
+    Been MIA working on fixing the date picker in the time form. Finally got it working and now I need to refactor the payroll to actually take those hours from the timecard

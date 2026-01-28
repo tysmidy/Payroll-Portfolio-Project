@@ -1,18 +1,18 @@
 .navbar {
-    background-color: rgb(100, 100, 113);
+    background-color: rgb(201, 216, 224);
     border-radius: 4px;
-    padding-top: .5rem;
-    padding-bottom: 2rem;
+
 }
 .home-button {
     text-decoration: none;
+    min-height: 80px;
     padding-left: 6px;
     margin-left: 7px;
     border: 10rem;
     border-radius: 10px;
-    color: whitesmoke ;
+    color: rgb(29 26 16) ;
     border-color: beige;
-    background-color: rgb(75, 75, 86);
+    background-color: rgb(203 107 7);
 }
 .time-button {
     text-decoration: none;
@@ -20,17 +20,18 @@
     margin-left: 14px;
     border: 12px;
     border-radius: 10px;
-    color: whitesmoke ;
+    color: rgb(29 26 16) ;
     border-color: beige;
-    background-color: rgb(75, 75, 86);
+    background-color: rgb(203 107 7);
 }
 .pay-button {
     text-decoration: none;
-    padding-left: 6px;
-    margin-left: 21px;
-    border: 10rem;
-    color: whitesmoke ;
+
+    margin-left: 17px;
+    border: 2rem;
+    border-radius: 5px;
+    color: rgb(29 26 16) ;
     border-color: beige;
-    background-color: rgb(75, 75, 86);
+    background-color: rgb(203 107 7);
 }
 

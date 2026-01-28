@@ -13,5 +13,8 @@ export default defineConfig({
       },
     },
   },
+    optimizeDeps: {
+    include: ["react-datepicker", "@floating-ui/react", "@floating-ui/react-dom"],
+  },
 });
 

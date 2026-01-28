@@ -1,5 +1,5 @@
 .top-div {
-    background-color: rgb(43, 43, 48);
+    background-color: rgb(238 237 219);
     padding-top: 2rem;
     padding-bottom: 23rem;
 }
@@ -7,7 +7,7 @@
     font-size: 4rem;
     font-weight: 600;
     line-height: 1;
-    color: white;
+    color: rgb(29 26 16);
     
 }
 .link-divs {
@@ -21,7 +21,7 @@
     margin-left: 10px;
     line-height: 1;
     color: white;
-    background-color: rgb(84, 84, 95);
+    background-color: lab(36.08% 2.48 -6.37);
     border-radius: .5rem;
     text-decoration: none;
 }
@@ -33,6 +33,6 @@
     line-height: 1;
     color: white;
     background-color: rgb(84, 84, 95);
-    border-radius: .5rem;
+    border-radius: .3rem;
     text-decoration: none;
 }
